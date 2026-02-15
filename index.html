@@ -1105,8 +1105,9 @@
     <section id="services" class="services">
         <h2 class="section-title">আমাদের সেবাসমূহ</h2>
         <p class="section-subtitle">আপনার সকল আইনি সমস্যার সমাধানে আমরা প্রস্তুত। নিম্নলিখিত ক্ষেত্রে আমরা বিশেষায়িত সেবা প্রদান করি।</p>
-        
+
         <div class="services-grid">
+            <!-- Criminal Law -->
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
                 <h3>ফৌজদারি মামলা</h3>
@@ -1119,9 +1120,10 @@
                     <li>নারী ও শিশু নির্যাতন মামলা</li>
                     <li>জামিন আবেদন ও আপিল</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('criminal')">বিস্তারিত দেখুন</button>
             </div>
 
+            <!-- Civil Law -->
             <div class="service-card">
                 <div class="service-icon">🏛️</div>
                 <h3>দেওয়ানি মামলা</h3>
@@ -1134,9 +1136,10 @@
                     <li>ইজারা ও ভাড়াটিয়া সংক্রান্ত বিরোধ</li>
                     <li>ক্ষতিপূরণ মামলা</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('civil')">বিস্তারিত দেখুন</button>
             </div>
 
+            <!-- Family Law -->
             <div class="service-card">
                 <div class="service-icon">👨‍👩‍👧‍👦</div>
                 <h3>পারিবারিক আইন</h3>
@@ -1149,9 +1152,10 @@
                     <li>বহুবিবাহ সংক্রান্ত মামলা</li>
                     <li>উত্তরাধিকার বণ্টন</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('family')">বিস্তারিত দেখুন</button>
             </div>
 
+            <!-- Constitutional Law -->
             <div class="service-card">
                 <div class="service-icon">📜</div>
                 <h3>সাংবিধানিক আইন</h3>
@@ -1163,9 +1167,10 @@
                     <li>বেআইনি আটক থেকে মুক্তি</li>
                     <li>প্রশাসনিক কর্মের বিরুদ্ধে প্রতিকার</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('constitutional')">বিস্তারিত দেখুন</button>
             </div>
 
+            <!-- Labor Law -->
             <div class="service-card">
                 <div class="service-icon">👷</div>
                 <h3>শ্রম আইন</h3>
@@ -1177,9 +1182,10 @@
                     <li>শ্রম আদালতে প্রতিনিধিত্ব</li>
                     <li>কর্মচারী অধিকার সংরক্ষণ</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('labor')">বিস্তারিত দেখুন</button>
             </div>
 
+            <!-- Property & Land -->
             <div class="service-card">
                 <div class="service-icon">🏠</div>
                 <h3>ভূমি ও সম্পত্তি</h3>
@@ -1192,7 +1198,7 @@
                     <li>সম্পত্তি বিরোধ নিষ্পত্তি</li>
                     <li>দলিল প্রস্তুতকরণ</li>
                 </ul>
-                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+                <button class="view-details-btn" onclick="showServiceModal('property')">বিস্তারিত দেখুন</button>
             </div>
         </div>
     </section>
@@ -1201,49 +1207,57 @@
     <section id="cases" class="case-types">
         <h2 class="section-title">মামলার ধরন সমূহ</h2>
         <p class="section-subtitle">বিভিন্ন ধরনের মামলার বিস্তারিত প্রক্রিয়া ও আইনি তথ্য জানুন</p>
-        
+
         <div class="case-grid">
-            <div class="case-card">
+            <div class="case-card" onclick="showCaseDetails('হত্যা মামলা')">
                 <span class="case-type-badge">ফৌজদারি</span>
                 <h4>হত্যা মামলা</h4>
                 <p>দণ্ডবিধি ধারা ৩০২-৩০৪ এর অধীনে</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('চুরি ও ডাকাতির মামলা')">
                 <span class="case-type-badge">ফৌজদারি</span>
                 <h4>চুরি ও ডাকাতির মামলা</h4>
                 <p>দণ্ডবিধি ধারা ৩৭৮-৩৮৯ এর অধীনে</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('জালিয়াতি মামলা')">
                 <span class="case-type-badge">ফৌজদারি</span>
                 <h4>জালিয়াতি ও প্রতারণা</h4>
                 <p>দণ্ডবিধি ধারা ৪১৫-৪২০ এর অধীনে</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('মাদক মামলা')">
                 <span class="case-type-badge">ফৌজদারি</span>
                 <h4>মাদক মামলা</h4>
                 <p>মাদকদ্রব্য নিয়ন্ত্রণ আইন ১৯৯০</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('নারী ও শিশু নির্যাতন মামলা')">
                 <span class="case-type-badge">ফৌজদারি</span>
                 <h4>নারী ও শিশু নির্যাতন</h4>
                 <p>নারী ও শিশু নির্যাতন দমন আইন ২০০০</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('রিট পিটিশন')">
                 <span class="case-type-badge">সাংবিধানিক</span>
                 <h4>রিট পিটিশন</h4>
                 <p>মৌলিক অধিকার সংরক্ষণ</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('বিবাহবিচ্ছেদ')">
                 <span class="case-type-badge">পারিবারিক</span>
                 <h4>বিবাহবিচ্ছেদ</h4>
                 <p>মুসলিম বিবাহবিচ্ছেদ আইন ১৯৩৯</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('জমি ক্রয়-বিক্রয়')">
                 <span class="case-type-badge">দেওয়ানি</span>
                 <h4>জমি ক্রয়-বিক্রয়</h4>
                 <p>সম্পত্তি হস্তান্তর আইন ১৮৮২</p>
             </div>
-            <div class="case-card">
+
+            <div class="case-card" onclick="showCaseDetails('অন্যায় বরখাস্ত')">
                 <span class="case-type-badge">শ্রম</span>
                 <h4>অন্যায় বরখাস্ত</h4>
                 <p>শ্রম আইন ২০০৬</p>
