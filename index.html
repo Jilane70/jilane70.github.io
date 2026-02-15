@@ -1836,7 +1836,295 @@
         if (dateInput) {
             const today = new Date().toISOString().split('T')[0];
             dateInput.setAttribute('min', today);
+        } // Case Details Data
+        const caseDetails = {
+            'হত্যা মামলা': {
+                description: 'দণ্ডবিধির ধারা ৩০২-৩০৪ এর অধীনে হত্যা মামলা অত্যন্ত গুরুতর ফৌজদারি অপরাধ। এই মামলায় সর্বোচ্চ শাস্তি মৃত্যুদণ্ড বা যাবজ্জীবন কারাদণ্ড হতে পারে।',
+                steps: [
+                    { title: 'FIR দাখিল', description: 'হত্যার ঘটনা ঘটলে অবিলম্বে নিকটস্থ থানায় First Information Report (FIR) দাখিল করতে হবে। FIR-এ ঘটনার বিস্তারিত বিবরণ, সময়, স্থান এবং সন্দেহভাজন ব্যক্তির তথ্য উল্লেখ করতে হবে।' },
+                    { title: 'তদন্ত প্রক্রিয়া', description: 'পুলিশ ঘটনাস্থল পরিদর্শন, আলামত সংগ্রহ, পোস্টমর্টেম রিপোর্ট, সাক্ষীদের জবানবন্দি সংগ্রহ করবে। একজন তদন্ত কর্মকর্তা নিয়োগ দেওয়া হবে।' },
+                    { title: 'গ্রেপ্তার ও জামিন', description: 'সন্দেহভাজন ব্যক্তিকে গ্রেপ্তার করা হলে তাকে ২৪ ঘণ্টার মধ্যে ম্যাজিস্ট্রেটের সামনে হাজির করতে হবে। খুনের মামলায় জামিন পাওয়া কঠিন তবে বিশেষ পরিস্থিতিতে হাইকোর্ট থেকে জামিন পাওয়া যেতে পারে।' },
+                    { title: 'চার্জশিট দাখিল', description: 'তদন্ত শেষে পুলিশ আদালতে চার্জশিট দাখিল করবে যেখানে অভিযুক্তের বিরুদ্ধে অভিযোগ এবং প্রমাণাদি উল্লেখ থাকবে।' },
+                    { title: 'বিচার প্রক্রিয়া', description: 'দায়রা আদালতে বিচার শুরু হবে। সাক্ষীদের জেরা, প্রমাণাদি উপস্থাপন, এবং আইনজীবীদের যুক্তি-তর্ক হবে। এই প্রক্রিয়া কয়েক মাস থেকে কয়েক বছর পর্যন্ত সময় নিতে পারে।' },
+                    { title: 'রায় ও আপিল', description: 'আদালত রায় ঘোষণা করবে। রায়ে অসন্তুষ্ট হলে হাইকোর্ট এবং পরবর্তীতে আপিল বিভাগে আপিল করা যায়।' }
+                ]
+            },
+            'চুরি ও ডাকাতির মামলা': {
+                description: 'দণ্ডবিধির ধারা ৩৭৮-৩৮৯ এর অধীনে চুরি ও ডাকাতির মামলা পরিচালিত হয়।',
+                steps: [
+                    { title: 'FIR দাখিল', description: 'চুরি বা ডাকাতির ঘটনা ঘটলে অবিলম্বে থানায় FIR দাখিল করতে হবে। চুরি হওয়া সামগ্রীর তালিকা ও মূল্য উল্লেখ করতে হবে।' },
+                    { title: 'তদন্ত', description: 'পুলিশ ঘটনাস্থল পরিদর্শন, আলামত সংগ্রহ, সাক্ষীদের জবানবন্দি এবং সন্দেহভাজনদের খোঁজ করবে।' },
+                    { title: 'গ্রেপ্তার ও সম্পত্তি উদ্ধার', description: 'সন্দেহভাজন ব্যক্তিদের গ্রেপ্তার এবং চুরি যাওয়া সম্পত্তি উদ্ধারের চেষ্টা করা হবে।' },
+                    { title: 'চার্জশিট', description: 'তদন্ত সম্পন্ন হলে পুলিশ চার্জশিট দাখিল করবে।' },
+                    { title: 'বিচার', description: 'ম্যাজিস্ট্রেট আদালতে বিচার হবে। অপরাধের গুরুত্ব অনুযায়ী শাস্তি নির্ধারিত হবে।' }
+                ]
+            },
+            'জালিয়াতি মামলা': {
+                description: 'দণ্ডবিধির ধারা ৪১৫-৪২০ এর অধীনে জালিয়াতি ও প্রতারণার মামলা পরিচালিত হয়।',
+                steps: [
+                    { title: 'অভিযোগ দাখিল', description: 'জালিয়াতি বা প্রতারণার শিকার হলে প্রমাণসহ থানায় অভিযোগ দাখিল করতে হবে। জাল দলিল, চেক বা অন্যান্য প্রমাণ সংরক্ষণ করতে হবে।' },
+                    { title: 'তদন্ত প্রক্রিয়া', description: 'পুলিশ জাল দলিলের পরীক্ষা, সাক্ষী জবানবন্দি এবং অভিযুক্তের আর্থিক লেনদেন যাচাই করবে।' },
+                    { title: 'ফরেনসিক পরীক্ষা', description: 'জাল স্বাক্ষর বা দলিলের জন্য ফরেনসিক পরীক্ষা করা হবে।' },
+                    { title: 'চার্জশিট ও বিচার', description: 'প্রমাণ পাওয়া গেলে চার্জশিট দাখিল এবং আদালতে বিচার শুরু হবে।' },
+                    { title: 'ক্ষতিপূরণ', description: 'দোষী সাব্যস্ত হলে শাস্তির পাশাপাশি ক্ষতিগ্রস্তকে ক্ষতিপূরণ দেওয়ার আদেশ দেওয়া যেতে পারে।' }
+                ]
+            },
+            'মাদক মামলা': {
+                description: 'মাদকদ্রব্য নিয়ন্ত্রণ আইন, ১৯৯০ এর অধীনে মাদক অপরাধ পরিচালিত হয়।',
+                steps: [
+                    { title: 'গ্রেপ্তার', description: 'মাদক অপরাধে গ্রেপ্তার হলে অবিলম্বে একজন অভিজ্ঞ আইনজীবী নিয়োগ করুন।' },
+                    { title: 'নমুনা পরীক্ষা', description: 'উদ্ধারকৃত মাদকের নমুনা সরকারি ল্যাবে পরীক্ষা করা হবে।' },
+                    { title: 'জামিন আবেদন', description: 'মাদক মামলায় জামিন কঠিন তবে বিশেষ পরিস্থিতিতে হাইকোর্ট থেকে জামিন পাওয়া সম্ভব।' },
+                    { title: 'বিচার', description: 'মাদক আদালতে দ্রুত বিচার প্রক্রিয়া চলবে।' },
+                    { title: 'শাস্তি', description: 'দোষী সাব্যস্ত হলে মাদকের ধরন ও পরিমাণ অনুযায়ী কঠোর শাস্তি হতে পারে।' }
+                ]
+            },
+            'নারী ও শিশু নির্যাতন মামলা': {
+                description: 'নারী ও শিশু নির্যাতন দমন আইন, ২০০০ এর অধীনে এই মামলা পরিচালিত হয়।',
+                steps: [
+                    { title: 'অভিযোগ দাখিল', description: 'নিকটস্থ থানা বা নারী ও শিশু নির্যাতন দমন ট্রাইব্যুনালে অভিযোগ দাখিল করুন।' },
+                    { title: 'মেডিকেল পরীক্ষা', description: 'শারীরিক নির্যাতনের ক্ষেত্রে অবিলম্বে মেডিকেল পরীক্ষা করান এবং রিপোর্ট সংরক্ষণ করুন।' },
+                    { title: 'সুরক্ষা আদেশ', description: 'প্রয়োজনে আদালত থেকে সুরক্ষা আদেশ নিতে পারেন।' },
+                    { title: 'দ্রুত বিচার', description: 'নারী ও শিশু নির্যাতন ট্রাইব্যুনালে দ্রুত বিচার প্রক্রিয়া চলবে।' },
+                    { title: 'ক্ষতিপূরণ', description: 'দোষী সাব্যস্ত হলে কঠোর শাস্তি এবং ক্ষতিপূরণের আদেশ দেওয়া হতে পারে।' }
+                ]
+            },
+            'রিট পিটিশন': {
+                description: 'সাংবিধানিক প্রতিকারের জন্য হাইকোর্ট বিভাগে রিট পিটিশন দায়ের করা হয়।',
+                steps: [
+                    { title: 'আইনি পরামর্শ', description: 'রিট পিটিশন দায়েরের আগে অভিজ্ঞ সাংবিধানিক আইনজীবীর পরামর্শ নিন।' },
+                    { title: 'রিট দায়ের', description: 'হাইকোর্ট বিভাগে রিট পিটিশন দায়ের করুন। এতে মৌলিক অধিকার লঙ্ঘনের বিস্তারিত বিবরণ থাকতে হবে।' },
+                    { title: 'নোটিশ জারি', description: 'আদালত সংশ্লিষ্ট কর্তৃপক্ষকে নোটিশ জারি করবে এবং জবাব চাইবে।' },
+                    { title: 'শুনানি', description: 'উভয় পক্ষের যুক্তি-তর্ক শোনার পর আদালত রায় দেবে।' },
+                    { title: 'রুল', description: 'প্রয়োজনে আদালত রুল জারি করে অন্তর্বর্তীকালীন আদেশ দিতে পারে।' }
+                ]
+            },
+            'বিবাহবিচ্ছেদ': {
+                description: 'মুসলিম বিবাহবিচ্ছেদ আইন ১৯৩৯ এবং পারিবারিক আদালত অধ্যাদেশ ১৯৮৫ অনুযায়ী বিবাহবিচ্ছেদ মামলা পরিচালিত হয়।',
+                steps: [
+                    { title: 'নোটিশ প্রদান', description: 'স্বামী তালাক দিতে চাইলে স্ত্রী ও ইউনিয়ন পরিষদ চেয়ারম্যানকে লিখিত নোটিশ দিতে হবে।' },
+                    { title: 'সালিশি প্রচেষ্টা', description: '৯০ দিনের মধ্যে সালিশি পরিষদ গঠন করে মীমাংসার চেষ্টা করা হবে।' },
+                    { title: 'মামলা দায়ের', description: 'মীমাংসা ব্যর্থ হলে পারিবারিক আদালতে বিবাহবিচ্ছেদ মামলা দায়ের করতে হবে।' },
+                    { title: 'ভরণপোষণ ও অধিকার', description: 'স্ত্রীর ভরণপোষণ, দেনমোহর এবং সন্তান হেফাজতের বিষয় নিষ্পত্তি হবে।' },
+                    { title: 'ডিক্রি', description: 'আদালত বিবাহবিচ্ছেদ ডিক্রি প্রদান করবে।' }
+                ]
+            },
+            'জমি ক্রয়-বিক্রয়': {
+                description: 'সম্পত্তি হস্তান্তর আইন ১৮৮২ এবং রেজিস্ট্রেশন আইন ১৯০৮ অনুযায়ী জমি ক্রয়-বিক্রয় হয়।',
+                steps: [
+                    { title: 'দলিল যাচাই', description: 'ক্রয়ের আগে জমির দলিল, খতিয়ান, পর্চা ভালোভাবে যাচাই করুন। জমিতে কোনো বিরোধ আছে কিনা তা নিশ্চিত হন।' },
+                    { title: 'চুক্তিপত্র তৈরি', description: 'ক্রেতা ও বিক্রেতার মধ্যে লিখিত চুক্তিপত্র তৈরি করুন যেখানে মূল্য, পরিশোধের শর্ত এবং সময়সীমা উল্লেখ থাকবে।' },
+                    { title: 'বায়না দলিল', description: 'চূড়ান্ত দলিলের আগে বায়না দলিল সম্পাদন করে আগাম অর্থ পরিশোধ করুন।' },
+                    { title: 'দলিল রেজিস্ট্রি', description: 'সাব-রেজিস্ট্রি অফিসে দলিল রেজিস্ট্রি করুন। স্ট্যাম্প ডিউটি ও রেজিস্ট্রেশন ফি পরিশোধ করতে হবে।' },
+                    { title: 'নামজারি', description: 'ভূমি অফিসে নামজারি করে নতুন মালিকের নামে খতিয়ান করুন।' },
+                    { title: 'দখল হস্তান্তর', description: 'দলিল রেজিস্ট্রির পর জমির দখল হস্তান্তর করুন।' }
+                ]
+            },
+            'অন্যায় বরখাস্ত': {
+                description: 'শ্রম আইন ২০০৬ এর অধীনে অন্যায় বরখাস্তের বিরুদ্ধে প্রতিকার পাওয়া যায়।',
+                steps: [
+                    { title: 'কারণ দর্শানো নোটিশ', description: 'বরখাস্তের ৩০ দিনের মধ্যে লিখিতভাবে কর্তৃপক্ষের কাছে ব্যাখ্যা চান।' },
+                    { title: 'অভিযোগ দায়ের', description: 'শ্রম আদালতে অন্যায় বরখাস্তের বিরুদ্ধে অভিযোগ দায়ের করুন।' },
+                    { title: 'প্রমাণ সংগ্রহ', description: 'চাকরির চুক্তি, নিয়োগপত্র, বেতনের রশিদ এবং অন্যান্য প্রমাণাদি সংগ্রহ করুন।' },
+                    { title: 'শুনানি', description: 'শ্রম আদালতে উভয় পক্ষের শুনানি হবে।' },
+                    { title: 'প্রতিকার', description: 'আদালত চাকরিতে পুনর্বহাল বা ক্ষতিপূরণের আদেশ দিতে পারে।' }
+                ]
+            }
+        };
+
+        // Service Details Data
+        const serviceDetails = {
+            'criminal': {
+                title: 'ফৌজদারি মামলা সেবা',
+                description: 'ফৌজদারি আইনের অধীনে সকল ধরনের মামলায় আমরা বিশেষজ্ঞ আইনি সহায়তা প্রদান করি। আমাদের অভিজ্ঞ আইনজীবী দল আপনার অধিকার রক্ষায় সর্বদা প্রস্তুত।',
+                services: [
+                    { name: 'হত্যা ও খুনের মামলা', details: 'দণ্ডবিধি ধারা ৩০২-৩০৪ এর অধীনে সকল ধরনের হত্যা মামলায় পরামর্শ, জামিন আবেদন এবং বিচারিক প্রতিনিধিত্ব।' },
+                    { name: 'চুরি ও ডাকাতি', details: 'দণ্ডবিধি ধারা ৩৭৮-৩৮৯ এর অধীনে চুরি, ডাকাতি, লুটপাটের মামলায় সম্পূর্ণ আইনি সহায়তা।' },
+                    { name: 'জালিয়াতি ও প্রতারণা', details: 'দণ্ডবিধি ধারা ৪১৫-৪২০ এর অধীনে জালিয়াতি, প্রতারণা, জাল দলিলের মামলা পরিচালনা।' },
+                    { name: 'মাদক সংক্রান্ত অপরাধ', details: 'মাদকদ্রব্য নিয়ন্ত্রণ আইন ১৯৯০ এর অধীনে মাদক মামলায় জামিন, বিচার ও আপিল।' },
+                    { name: 'নারী ও শিশু নির্যাতন', details: 'নারী ও শিশু নির্যাতন দমন আইন ২০০০ এর অধীনে ধর্ষণ, যৌন হয়রানি, এসিড নিক্ষেপ ইত্যাদি মামলা।' },
+                    { name: 'জামিন আবেদন', details: 'ম্যাজিস্ট্রেট আদালত, দায়রা আদালত ও হাইকোর্টে জামিন আবেদন প্রস্তুত ও পরিচালনা।' },
+                    { name: 'আপিল', details: 'হাইকোর্ট বিভাগ ও আপিল বিভাগে ফৌজদারি মামলার আপিল পরিচালনা।' }
+                ]
+            },
+            'civil': {
+                title: 'দেওয়ানি মামলা সেবা',
+                description: 'সম্পত্তি, চুক্তি এবং দেওয়ানি বিরোধের সকল ক্ষেত্রে আমরা দক্ষ আইনি সমাধান প্রদান করি।',
+                services: [
+                    { name: 'জমি-জমা বিরোধ', details: 'সম্পত্তির মালিকানা, দখল, সীমানা নির্ধারণ সংক্রান্ত সকল মামলা পরিচালনা।' },
+                    { name: 'বন্টননামা মামলা', details: 'যৌথ সম্পত্তি বণ্টন, উত্তরাধিকার বণ্টন সংক্রান্ত মামলা।' },
+                    { name: 'মালিকানা পুনরুদ্ধার', details: 'বেদখল হওয়া সম্পত্তির মালিকানা ও দখল পুনরুদ্ধারের মামলা।' },
+                    { name: 'চুক্তি বিরোধ', details: 'ব্যবসায়িক বা ব্যক্তিগত চুক্তি ভঙ্গের মামলা এবং ক্ষতিপূরণ দাবি।' },
+                    { name: 'ইজারা ও ভাড়াটিয়া মামলা', details: 'ভাড়া বিরোধ, উচ্ছেদ মামলা এবং বকেয়া ভাড়া আদায়।' },
+                    { name: 'ক্ষতিপূরণ মামলা', details: 'অবহেলা, দুর্ঘটনা বা চুক্তি ভঙ্গের জন্য ক্ষতিপূরণ দাবি।' }
+                ]
+            },
+            'family': {
+                title: 'পারিবারিক আইন সেবা',
+                description: 'পারিবারিক বিষয়ে সংবেদনশীল ও কার্যকর আইনি সহায়তা প্রদান করি আমরা।',
+                services: [
+                    { name: 'বিবাহবিচ্ছেদ', details: 'তালাক, খুলা, বিবাহ বিচ্ছেদ সংক্রান্ত সকল মামলা এবং পারিবারিক আদালতে প্রতিনিধিত্ব।' },
+                    { name: 'দেনমোহর আদায়', details: 'অপরিশোধিত দেনমোহর আদায়ের জন্য পারিবারিক আদালতে মামলা দায়ের।' },
+                    { name: 'ভরণপোষণ', details: 'স্ত্রী ও সন্তানের ভরণপোষণ দাবির মামলা পরিচালনা।' },
+                    { name: 'অভিভাবকত্ব ও হেফাজত', details: 'সন্তানের অভিভাবকত্ব ও হেফাজত সংক্রান্ত মামলা।' },
+                    { name: 'বহুবিবাহ অনুমতি', details: 'বহুবিবাহ অনুমতি আবেদন এবং সংশ্লিষ্ট আইনি প্রক্রিয়া।' },
+                    { name: 'উত্তরাধিকার বণ্টন', details: 'ইসলামী ও অন্যান্য আইন অনুযায়ী উত্তরাধিকার সম্পত্তি বণ্টন।' }
+                ]
+            },
+            'constitutional': {
+                title: 'সাংবিধানিক আইন সেবা',
+                description: 'মৌলিক অধিকার সংরক্ষণ এবং সাংবিধানিক প্রতিকারে আমরা বিশেষজ্ঞ।',
+                services: [
+                    { name: 'রিট পিটিশন', details: 'হাইকোর্ট বিভাগে সকল ধরনের রিট পিটিশন (Mandamus, Prohibition, Certiorari, Quo Warranto, Habeas Corpus) দায়ের।' },
+                    { name: 'মৌলিক অধিকার রক্ষা', details: 'সংবিধান প্রদত্ত মৌলিক অধিকার লঙ্ঘনের বিরুদ্ধে আইনি প্রতিকার।' },
+                    { name: 'সরকারি সিদ্ধান্ত চ্যালেঞ্জ', details: 'সরকারি বা আধা-সরকারি সংস্থার বেআইনি সিদ্ধান্ত বা কার্যকলাপের বিরুদ্ধে প্রতিকার।' },
+                    { name: 'বেআইনি আটক', details: 'বেআইনি আটক থেকে মুক্তির জন্য Habeas Corpus রিট।' },
+                    { name: 'প্রশাসনিক আইন', details: 'প্রশাসনিক কর্মের বিরুদ্ধে জুডিশিয়াল রিভিউ এবং প্রতিকার।' }
+                ]
+            },
+            'labor': {
+                title: 'শ্রম আইন সেবা',
+                description: 'শ্রমিকদের অধিকার রক্ষা এবং কর্মক্ষেত্রে ন্যায়বিচার নিশ্চিতকরণ।',
+                services: [
+                    { name: 'অন্যায় বরখাস্ত', details: 'শ্রম আইন ২০০৬ এর অধীনে অন্যায় বরখাস্তের বিরুদ্ধে শ্রম আদালতে মামলা।' },
+                    { name: 'বকেয়া বেতন', details: 'অপরিশোধিত বেতন, বোনাস, ওভারটাইম আদায়ের মামলা।' },
+                    { name: 'ক্ষতিপূরণ', details: 'কর্মক্ষেত্রে দুর্ঘটনা বা আঘাতের জন্য ক্ষতিপূরণ দাবি।' },
+                    { name: 'শ্রম আদালত প্রতিনিধিত্ব', details: 'শ্রম আদালতে সকল ধরনের মামলায় প্রতিনিধিত্ব।' },
+                    { name: 'কর্মচারী অধিকার', details: 'কর্মচারীদের সাংবিধানিক ও আইনগত অধিকার সংরক্ষণ।' }
+                ]
+            },
+            'property': {
+                title: 'ভূমি ও সম্পত্তি সেবা',
+                description: 'জমি ক্রয়-বিক্রয় এবং সম্পত্তি বিষয়ক সম্পূর্ণ আইনি সহায়তা।',
+                services: [
+                    { name: 'দলিল যাচাই', details: 'ক্রয়ের পূর্বে জমির দলিল, খতিয়ান, পর্চা এবং মালিকানা যাচাই।' },
+                    { name: 'দলিল রেজিস্ট্রেশন', details: 'সাব-রেজিস্ট্রি অফিসে বিক্রয়, দান, হেবা ইত্যাদি দলিল রেজিস্ট্রেশন।' },
+                    { name: 'নামজারি ও মিউটেশন', details: 'ভূমি অফিসে নামজারি, খতিয়ান সংশোধন এবং মিউটেশন কার্যক্রম।' },
+                    { name: 'খতিয়ান যাচাই', details: 'SA, RS, BS, CS খতিয়ান সংগ্রহ ও যাচাই করা।' },
+                    { name: 'সম্পত্তি বিরোধ', details: 'জমি বিরোধ, সীমানা বিরোধ এবং দখল সংক্রান্ত মামলা।' },
+                    { name: 'দলিল প্রস্তুতকরণ', details: 'বিক্রয়, দান, হেবা, ওয়াকফ, বায়না ইত্যাদি দলিল প্রস্তুত করা।' }
+                ]
+            }
+        };
+
+        function showCaseDetails(caseTitle) {
+            const modal = document.getElementById('caseModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.textContent = caseTitle;
+
+            const details = caseDetails[caseTitle];
+            
+            if (details) {
+                let content = `<p style="font-size: 1.15rem; color: var(--gray); margin-bottom: 2.5rem; line-height: 1.9;">${details.description}</p>`;
+                content += '<h3 style="color: var(--primary); margin-bottom: 2rem; font-family: Noto Serif Bengali; font-size: 1.6rem; font-weight: 700;">মামলার প্রক্রিয়া:</h3>';
+                
+                details.steps.forEach((step, index) => {
+                    content += `
+                        <div class="step">
+                            <div class="step-number">${index + 1}</div>
+                            <h4>${step.title}</h4>
+                            <p>${step.description}</p>
+                        </div>
+                    `;
+                });
+
+                content += `
+                    <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-radius: 12px; text-align: center;">
+                        <p style="font-size: 1.15rem; margin-bottom: 1rem; opacity: 0.95;">এই মামলা সম্পর্কে বিস্তারিত পরামর্শ ও আইনি সহায়তার জন্য</p>
+                        <p style="font-size: 1.5rem; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">যোগাযোগ করুন</p>
+                        <p style="font-size: 1.8rem; color: var(--white); font-weight: 700;">📞 ০১৬০৩২৩৯৭৩৫</p>
+                    </div>
+                `;
+            }
+
+            modalContent.innerHTML = content;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeModal() {
+            const modal = document.getElementById('caseModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showServiceModal(serviceType) {
+            const modal = document.getElementById('serviceModal');
+            const modalTitle = document.getElementById('serviceModalTitle');
+            const modalContent = document.getElementById('serviceModalContent');
+
+            const service = serviceDetails[serviceType];
+
+            modalTitle.textContent = service.title;
+
+            let content = `<p style="font-size: 1.15rem; color: var(--gray); margin-bottom: 2.5rem; line-height: 1.9;">${service.description}</p>`;
+            content += '<h3 style="color: var(--primary); margin-bottom: 2rem; font-family: Noto Serif Bengali; font-size: 1.6rem; font-weight: 700;">সেবার বিস্তারিত:</h3>';
+
+            service.services.forEach((item, index) => {
+                content += `
+                    <div class="step">
+                        <div class="step-number">${index + 1}</div>
+                        <h4>${item.name}</h4>
+                        <p>${item.details}</p>
+                    </div>
+                `;
+            });
+
+            content += `
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.15rem; margin-bottom: 1rem; opacity: 0.95;">এই সেবা সম্পর্কে বিস্তারিত জানতে এবং পরামর্শের জন্য</p>
+                    <p style="font-size: 1.5rem; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">যোগাযোগ করুন</p>
+                    <p style="font-size: 1.8rem; color: var(--white); font-weight: 700;">📞 ০১৬০৩২৩৯৭৩৫</p>
+                </div>
+            `;
+
+            modalContent.innerHTML = content;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeServiceModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on outside click
+        document.getElementById('caseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeServiceModal();
+            }
+        });
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeServiceModal();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
