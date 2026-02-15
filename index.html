@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muntazir Law House | মোঃ জিলানী সরকার শিক্ষানবিশ-আইনজীবী</title>
+    <title>Muntazir LawLab | MD. JILANE SARKAR | মোঃ জিলানী সরকার - শিক্ষানবিশ-আইনজীবী</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,394 +12,669 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #0B2F5D;
+            --secondary: #1E5A9E;
+            --accent: #2E7DD1;
+            --gold: #FFB84D;
+            --light-blue: #E8F4FF;
+            --white: #ffffff;
+            --dark-text: #1a202c;
+            --gray: #4a5568;
+            --border: #cbd5e0;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: var(--white);
+            color: var(--dark-text);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        .navbar {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
+        /* Navigation */
+        nav {
+            position: fixed;
             top: 0;
+            width: 100%;
+            background: rgba(11, 47, 93, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 5%;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 87, 183, 0.15);
+            border-bottom: 3px solid var(--accent);
         }
 
-        .navbar .container {
-            max-width: 1200px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-section {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 1rem;
         }
 
-        .logo {
-            width: 50px;
+        .logo-img {
             height: 50px;
-            border-radius: 50%;
+            width: auto;
         }
 
-        .brand-name {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .logo-text {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
             gap: 2rem;
+            list-style: none;
         }
 
-        nav a {
-            color: white;
+        .nav-links a {
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
         }
 
-        nav a:hover {
-            color: #ffd54f;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
-            color: white;
-            padding: 80px 20px;
+            margin-top: 70px;
+            background: linear-gradient(135deg, #0B2F5D 0%, #1E5A9E 50%, #2E7DD1 100%);
+            color: var(--white);
+            padding: 4rem 5%;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-container {
-            max-width: 1200px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 184, 77, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(46, 125, 209, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+                linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03));
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .hero-text h1 {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--white);
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .hero-content h2 {
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light-blue);
+            font-weight: 400;
+        }
+
+        .hero-text .company-name {
             font-size: 2rem;
-            margin-bottom: 20px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
         }
 
         .hero-info {
-            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .hero-info p {
-            margin: 10px 0;
-            font-size: 1.1rem;
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
-        .hero-image {
+        .hero-info-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .hero-info-item strong {
+            color: var(--gold);
+            min-width: 100px;
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
+            border: 3px solid rgba(255, 184, 77, 0.4);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
         }
 
-        .hero-image img {
-            max-width: 400px;
-            width: 100%;
+        .profile-image {
+            width: 300px;
+            height: 380px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            object-fit: cover;
+            object-position: center top;
+            border: 4px solid var(--gold);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
         }
 
-        .profile-caption {
-            margin-top: 20px;
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
         }
 
-        .section {
-            padding: 60px 20px;
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--light-blue);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
         }
 
         .section-title {
             text-align: center;
+            font-family: 'Noto Serif Bengali', serif;
             font-size: 2.5rem;
-            color: #1a237e;
-            margin-bottom: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 50px;
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.2);
+            border-color: var(--accent);
         }
 
         .service-icon {
-            font-size: 4rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
-            color: #1a237e;
+            font-family: 'Noto Serif Bengali', serif;
             font-size: 1.5rem;
-            margin-bottom: 15px;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .service-card p {
-            color: #666;
-            margin-bottom: 20px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .service-card ul {
+        .service-features {
             list-style: none;
+            margin: 1.5rem 0;
         }
 
-        .service-card li {
-            padding: 8px 0;
-            padding-left: 25px;
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
             position: relative;
-            color: #555;
+            padding-left: 1.5rem;
         }
 
-        .service-card li:before {
-            content: "✓";
+        .service-features li::before {
+            content: '✓';
             position: absolute;
             left: 0;
-            color: #4caf50;
+            color: var(--accent);
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
-        .service-card button {
-            background: #1a237e;
-            color: white;
+        .view-details-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
             border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             font-size: 1rem;
-            margin-top: 15px;
-            transition: background 0.3s;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            width: 100%;
         }
 
-        .service-card button:hover {
-            background: #283593;
+        .view-details-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.3);
         }
 
-        .cases-grid {
+        /* Case Types Section */
+        .case-types {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+
+        .case-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 1.5rem;
         }
 
         .case-card {
-            background: #f5f5f5;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 5px solid #1a237e;
-            transition: transform 0.3s;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid var(--border);
         }
 
         .case-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .case-badge {
-            display: inline-block;
-            background: #1a237e;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 90, 158, 0.15);
+            border-color: var(--accent);
         }
 
         .case-card h4 {
-            color: #1a237e;
-            font-size: 1.3rem;
-            margin: 10px 0;
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        .case-card p {
-            color: #666;
+        .case-type-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
-        /* New Sections Styling */
-        .testimonials-grid {
+        /* New Sections */
+        
+        /* Case Studies */
+        .case-studies {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
+        }
+
+        .case-studies-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 2rem;
+        }
+
+        .case-study-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid var(--border);
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.2);
+            border-color: var(--accent);
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 2rem;
+        }
+
+        .case-study-header h3 {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        .case-study-body {
+            padding: 2rem;
+        }
+
+        .case-study-body p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .case-description {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light-blue);
+            color: var(--dark-text);
+            line-height: 1.9;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .testimonial-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid var(--border);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.2);
+            border-color: var(--accent);
         }
 
         .rating {
-            color: #ffc107;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .testimonial-text {
             font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
 
         .testimonial-author h4 {
-            color: #1a237e;
-            margin-bottom: 5px;
+            font-family: 'Noto Serif Bengali', serif;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .testimonial-author p {
-            color: #888;
+            color: var(--gray);
             font-size: 0.95rem;
         }
 
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .case-study-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .case-study-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .case-study-header {
-            background: linear-gradient(135deg, #1a237e, #283593);
-            color: white;
-            padding: 25px;
-        }
-
-        .case-study-header h3 {
-            margin-top: 10px;
-            font-size: 1.4rem;
-        }
-
-        .case-study-body {
-            padding: 25px;
-        }
-
-        .case-study-body p {
-            margin-bottom: 12px;
-            color: #555;
-        }
-
-        .case-description {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 2px solid #f0f0f0;
-            line-height: 1.7;
+        /* Blog */
+        .blog {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
         }
 
         .blog-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .blog-card {
-            background: white;
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid var(--border);
         }
 
         .blog-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.2);
+            border-color: var(--accent);
         }
 
         .blog-image {
-            position: relative;
             height: 250px;
-            background: #e0e0e0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 4rem;
+            position: relative;
         }
 
         .blog-category {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #1a237e;
-            color: white;
-            padding: 8px 15px;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .blog-content {
-            padding: 25px;
+            padding: 2rem;
         }
 
         .blog-content h3 {
-            color: #1a237e;
-            margin-bottom: 15px;
+            font-family: 'Noto Serif Bengali', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
             font-size: 1.4rem;
+            font-weight: 700;
         }
 
         .blog-meta {
-            color: #888;
+            color: var(--gray);
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
         }
 
         .blog-link {
-            color: #1a237e;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 1rem;
         }
 
         .blog-link:hover {
-            color: #283593;
+            color: var(--primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.3);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: var(--white);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
         }
 
         .faq-container {
@@ -407,40 +683,50 @@
         }
 
         .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(30, 90, 158, 0.08);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
-            transition: background 0.3s;
+            background: var(--white);
+            transition: background 0.3s ease;
         }
 
         .faq-question:hover {
-            background: #f8f9fa;
+            background: var(--light-blue);
         }
 
         .faq-question h3 {
-            color: #1a237e;
+            font-family: 'Noto Serif Bengali', serif;
+            color: var(--primary);
             font-size: 1.15rem;
+            font-weight: 600;
             margin: 0;
+            flex: 1;
         }
 
-        .faq-question .arrow {
+        .faq-arrow {
             font-size: 1.5rem;
-            color: #1a237e;
-            transition: transform 0.3s;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
         }
 
-        .faq-item.active .arrow {
+        .faq-item.active .faq-arrow {
             transform: rotate(180deg);
         }
 
@@ -448,197 +734,210 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
 
         .faq-item.active .faq-answer {
             max-height: 500px;
-            padding: 20px;
-            border-top: 2px solid #f0f0f0;
+            padding: 1.5rem;
+            border-top: 2px solid var(--light-blue);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.8;
         }
 
-        .gallery-item {
-            position: relative;
-            height: 300px;
-            background: #e0e0e0;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 30px 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        /* Appointment */
+        .appointment {
+            padding: 5rem 5%;
+            background: var(--white);
         }
 
         .appointment-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            gap: 3rem;
         }
 
         .appointment-form {
-            background: #f8f9fa;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            border: 2px solid var(--border);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: #1a237e;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
             font-weight: 600;
+            font-family: 'Noto Serif Bengali', serif;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
+            padding: 1rem;
+            border: 2px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            font-family: 'Hind Siliguri', sans-serif;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #1a237e;
+            border-color: var(--accent);
         }
 
         .checkbox-label {
             display: flex;
             align-items: start;
-            gap: 10px;
+            gap: 0.8rem;
             font-size: 0.95rem;
+            color: var(--gray);
         }
 
         .btn-submit {
-            background: #1a237e;
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
             border: none;
-            padding: 15px 40px;
+            padding: 1rem 2rem;
             border-radius: 8px;
             cursor: pointer;
             font-size: 1.1rem;
+            font-weight: 600;
             width: 100%;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
 
         .btn-submit:hover {
-            background: #283593;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.3);
         }
 
         .info-cards {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.5rem;
         }
 
         .info-card {
-            background: linear-gradient(135deg, #1a237e, #283593);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.2);
         }
 
         .info-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .info-card h3 {
-            margin-bottom: 10px;
+            font-family: 'Noto Serif Bengali', serif;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
         }
 
         .contact-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .contact-card {
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 90, 158, 0.1);
+            border: 2px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30, 90, 158, 0.2);
+            border-color: var(--accent);
         }
 
         .contact-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
         }
 
         .contact-card h3 {
-            color: #1a237e;
-            margin-bottom: 15px;
+            font-family: 'Noto Serif Bengali', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .contact-card a {
-            color: #1a237e;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.2rem;
         }
 
         .contact-card a:hover {
-            color: #283593;
+            color: var(--primary);
         }
 
+        /* Footer */
         .footer {
-            background: #1a237e;
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             text-align: center;
-            padding: 30px 20px;
+            padding: 2.5rem 5%;
         }
 
         .footer p {
-            margin: 5px 0;
+            margin: 0.5rem 0;
+            opacity: 0.9;
         }
 
-        /* WhatsApp Float Button */
-        .whatsapp-float {
+        /* Floating Buttons */
+        .floating-buttons {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #25d366;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -646,23 +945,38 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            z-index: 999;
+            color: var(--white);
             text-decoration: none;
-            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            background: #128c7e;
+        .floating-btn:hover {
             transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        .facebook-btn {
+            background: #1877F2;
+        }
+
+        .facebook-btn:hover {
+            background: #145DBF;
         }
 
         .back-to-top {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            background: #1a237e;
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -672,9 +986,9 @@
             justify-content: center;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             z-index: 999;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .back-to-top.visible {
@@ -682,744 +996,740 @@
         }
 
         .back-to-top:hover {
-            background: #283593;
+            background: var(--accent);
             transform: scale(1.1);
-        }
-
-        .bg-light {
-            background: #f8f9fa;
-        }
-
-        .bg-white {
-            background: white;
         }
 
         /* Responsive */
         @media (max-width: 968px) {
-            nav ul {
+            .nav-links {
                 display: none;
             }
-            
-            .hero-container {
+
+            .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            
-            .services-grid, .cases-grid, .testimonials-grid, 
-            .case-studies-grid, .blog-grid, .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .appointment-container, .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
 
-        @media (max-width: 640px) {
-            .section-title {
-                font-size: 2rem;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
-            
-            .hero-content h1 {
-                font-size: 2rem;
+
+            .services-grid,
+            .case-grid,
+            .case-studies-grid,
+            .testimonials-grid,
+            .blog-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .hero-content h2 {
-                font-size: 1.5rem;
+
+            .appointment-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                left: 20px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <div class="navbar">
-        <div class="container">
-            <div class="logo-section">
-                <img src="logo.png" alt="Muntazir Law House Logo" class="logo">
-                <span class="brand-name">Muntazir Law House</span>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo-img">
+                <span class="logo-text">Muntazir LawLab</span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">হোম</a></li>
-                    <li><a href="#services">সেবাসমূহ</a></li>
-                    <li><a href="#cases">মামলার ধরন</a></li>
-                    <li><a href="#case-studies">সফল মামলা</a></li>
-                    <li><a href="#testimonials">রিভিউ</a></li>
-                    <li><a href="#blog">ব্লগ</a></li>
-                    <li><a href="#gallery">গ্যালারি</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">যোগাযোগ</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#services">সেবাসমূহ</a></li>
+                <li><a href="#cases">মামলার ধরন</a></li>
+                <li><a href="#case-studies">সফল মামলা</a></li>
+                <li><a href="#testimonials">রিভিউ</a></li>
+                <li><a href="#blog">ব্লগ</a></li>
+                <li><a href="#gallery">গ্যালারি</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#appointment">অ্যাপয়েন্টমেন্ট</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Muntazir Law House</h1>
-                <h2>মোঃ জিলানী সরকার</h2>
-                <p style="font-size: 1.2rem; margin: 20px 0;">শিক্ষানবিশ আইনজীবী<br>বাংলাদেশ সুপ্রিম কোর্ট ও ঢাকা জজ কোর্ট</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>মোঃ জিলানী সরকার</h1>
+                <p class="subtitle">শিক্ষানবিশ আইনজীবী<br>বাংলাদেশ সুপ্রিম কোর্ট ও ঢাকা জজ কোর্ট</p>
+                <p class="company-name">Muntazir LawLab</p>
                 
                 <div class="hero-info">
-                    <p><strong>অভিজ্ঞতা:</strong><br>বাংলাদেশ সুপ্রিম কোর্ট এবং ঢাকা জজ কোর্টে দীর্ঘ অভিজ্ঞতা</p>
-                    <p><strong>বিশেষত্ব:</strong><br>ফৌজদারি, দেওয়ানি, পারিবারিক ও সাংবিধানিক আইন</p>
-                    <p><strong>সেবার ধরন:</strong><br>সকল ধরনের আইনি পরামর্শ ও মামলা পরিচালনা</p>
+                    <div class="hero-info-item">
+                        <strong>অভিজ্ঞতা:</strong>
+                        <span>বাংলাদেশ সুপ্রিম কোর্ট এবং ঢাকা জজ কোর্টে দীর্ঘ অভিজ্ঞতা</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <strong>বিশেষত্ব:</strong>
+                        <span>ফৌজদারি, দেওয়ানি, পারিবারিক ও সাংবিধানিক আইন</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <strong>সেবার ধরন:</strong>
+                        <span>সকল ধরনের আইনি পরামর্শ ও মামলা পরিচালনা</span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="1766906066155.jpg" alt="মোঃ জিলানী সরকার">
-                <div class="profile-caption">
-                    <h3>মোঃ জিলানী সরকার</h3>
-                    <p>শিক্ষানবিশ আইনজীবী</p>
+
+            <div class="profile-section">
+                <div class="profile-card">
+                    <img src="1766906066155.jpg" alt="মোঃ জিলানী সরকার" class="profile-image">
+                    <div class="profile-name">মোঃ জিলানী সরকার</div>
+                    <div class="profile-title">শিক্ষানবিশ আইনজীবী</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">আমাদের সেবাসমূহ</h2>
-            <p class="section-subtitle">আপনার সকল আইনি সমস্যার সমাধানে আমরা প্রস্তুত। নিম্নলিখিত ক্ষেত্রে আমরা বিশেষায়িত সেবা প্রদান করি।</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚖️</div>
-                    <h3>ফৌজদারি মামলা</h3>
-                    <p>ফৌজদারি আইনের সকল ধরনের মামলায় দক্ষ আইনি সহায়তা প্রদান।</p>
-                    <ul>
-                        <li>হত্যা ও খুনের মামলা</li>
-                        <li>চুরি, ডাকাতি ও লুটপাটের মামলা</li>
-                        <li>জালিয়াতি ও প্রতারণার মামলা</li>
-                        <li>মাদক সংক্রান্ত অপরাধ</li>
-                        <li>নারী ও শিশু নির্যাতন মামলা</li>
-                        <li>জামিন আবেদন ও আপিল</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+    <section id="services" class="services">
+        <h2 class="section-title">আমাদের সেবাসমূহ</h2>
+        <p class="section-subtitle">আপনার সকল আইনি সমস্যার সমাধানে আমরা প্রস্তুত। নিম্নলিখিত ক্ষেত্রে আমরা বিশেষায়িত সেবা প্রদান করি।</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>ফৌজদারি মামলা</h3>
+                <p>ফৌজদারি আইনের সকল ধরনের মামলায় দক্ষ আইনি সহায়তা প্রদান।</p>
+                <ul class="service-features">
+                    <li>হত্যা ও খুনের মামলা</li>
+                    <li>চুরি, ডাকাতি ও লুটপাটের মামলা</li>
+                    <li>জালিয়াতি ও প্রতারণার মামলা</li>
+                    <li>মাদক সংক্রান্ত অপরাধ</li>
+                    <li>নারী ও শিশু নির্যাতন মামলা</li>
+                    <li>জামিন আবেদন ও আপিল</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🏛️</div>
-                    <h3>দেওয়ানি মামলা</h3>
-                    <p>সম্পত্তি, চুক্তি ও দেওয়ানি বিরোধ সংক্রান্ত মামলার পরিচালনা।</p>
-                    <ul>
-                        <li>জমি-জমা ও সম্পত্তি বিরোধ</li>
-                        <li>বন্টননামা ও উত্তরাধিকার মামলা</li>
-                        <li>মালিকানা ও দখল পুনরুদ্ধার</li>
-                        <li>চুক্তি ভঙ্গের মামলা</li>
-                        <li>ইজারা ও ভাড়াটিয়া সংক্রান্ত বিরোধ</li>
-                        <li>ক্ষতিপূরণ মামলা</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>দেওয়ানি মামলা</h3>
+                <p>সম্পত্তি, চুক্তি ও দেওয়ানি বিরোধ সংক্রান্ত মামলার পরিচালনা।</p>
+                <ul class="service-features">
+                    <li>জমি-জমা ও সম্পত্তি বিরোধ</li>
+                    <li>বন্টননামা ও উত্তরাধিকার মামলা</li>
+                    <li>মালিকানা ও দখল পুনরুদ্ধার</li>
+                    <li>চুক্তি ভঙ্গের মামলা</li>
+                    <li>ইজারা ও ভাড়াটিয়া সংক্রান্ত বিরোধ</li>
+                    <li>ক্ষতিপূরণ মামলা</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">👨‍👩‍👧‍👦</div>
-                    <h3>পারিবারিক আইন</h3>
-                    <p>পারিবারিক বিষয়ে সংবেদনশীল ও কার্যকর আইনি সমাধান।</p>
-                    <ul>
-                        <li>বিবাহবিচ্ছেদ ও তালাক</li>
-                        <li>দেনমোহর আদায়</li>
-                        <li>ভরণপোষণ মামলা</li>
-                        <li>অভিভাবকত্ব ও হেফাজত</li>
-                        <li>বহুবিবাহ সংক্রান্ত মামলা</li>
-                        <li>উত্তরাধিকার বণ্টন</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">👨‍👩‍👧‍👦</div>
+                <h3>পারিবারিক আইন</h3>
+                <p>পারিবারিক বিষয়ে সংবেদনশীল ও কার্যকর আইনি সমাধান।</p>
+                <ul class="service-features">
+                    <li>বিবাহবিচ্ছেদ ও তালাক</li>
+                    <li>দেনমোহর আদায়</li>
+                    <li>ভরণপোষণ মামলা</li>
+                    <li>অভিভাবকত্ব ও হেফাজত</li>
+                    <li>বহুবিবাহ সংক্রান্ত মামলা</li>
+                    <li>উত্তরাধিকার বণ্টন</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📜</div>
-                    <h3>সাংবিধানিক আইন</h3>
-                    <p>মৌলিক অধিকার সংরক্ষণে হাইকোর্টে রিট পিটিশন দায়ের।</p>
-                    <ul>
-                        <li>রিট পিটিশন (Writ Petition)</li>
-                        <li>মৌলিক অধিকার রক্ষা</li>
-                        <li>সরকারি সিদ্ধান্ত চ্যালেঞ্জ</li>
-                        <li>বেআইনি আটক থেকে মুক্তি</li>
-                        <li>প্রশাসনিক কর্মের বিরুদ্ধে প্রতিকার</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">📜</div>
+                <h3>সাংবিধানিক আইন</h3>
+                <p>মৌলিক অধিকার সংরক্ষণে হাইকোর্টে রিট পিটিশন দায়ের।</p>
+                <ul class="service-features">
+                    <li>রিট পিটিশন (Writ Petition)</li>
+                    <li>মৌলিক অধিকার রক্ষা</li>
+                    <li>সরকারি সিদ্ধান্ত চ্যালেঞ্জ</li>
+                    <li>বেআইনি আটক থেকে মুক্তি</li>
+                    <li>প্রশাসনিক কর্মের বিরুদ্ধে প্রতিকার</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">👷</div>
-                    <h3>শ্রম আইন</h3>
-                    <p>শ্রমিকদের অধিকার রক্ষা ও কর্মক্ষেত্রে ন্যায়বিচার।</p>
-                    <ul>
-                        <li>অন্যায় বরখাস্তের মামলা</li>
-                        <li>বকেয়া বেতন আদায়</li>
-                        <li>ক্ষতিপূরণ দাবি</li>
-                        <li>শ্রম আদালতে প্রতিনিধিত্ব</li>
-                        <li>কর্মচারী অধিকার সংরক্ষণ</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">👷</div>
+                <h3>শ্রম আইন</h3>
+                <p>শ্রমিকদের অধিকার রক্ষা ও কর্মক্ষেত্রে ন্যায়বিচার।</p>
+                <ul class="service-features">
+                    <li>অন্যায় বরখাস্তের মামলা</li>
+                    <li>বকেয়া বেতন আদায়</li>
+                    <li>ক্ষতিপূরণ দাবি</li>
+                    <li>শ্রম আদালতে প্রতিনিধিত্ব</li>
+                    <li>কর্মচারী অধিকার সংরক্ষণ</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>ভূমি ও সম্পত্তি</h3>
-                    <p>জমি ক্রয়-বিক্রয় এবং সম্পত্তি বিষয়ক সম্পূর্ণ আইনি সেবা।</p>
-                    <ul>
-                        <li>জমি ক্রয়-বিক্রয় দলিল যাচাই</li>
-                        <li>দলিল রেজিস্ট্রেশন</li>
-                        <li>নামজারি ও মিউটেশন</li>
-                        <li>খতিয়ান ও পর্চা যাচাই</li>
-                        <li>সম্পত্তি বিরোধ নিষ্পত্তি</li>
-                        <li>দলিল প্রস্তুতকরণ</li>
-                    </ul>
-                    <button>বিস্তারিত দেখুন</button>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>ভূমি ও সম্পত্তি</h3>
+                <p>জমি ক্রয়-বিক্রয় এবং সম্পত্তি বিষয়ক সম্পূর্ণ আইনি সেবা।</p>
+                <ul class="service-features">
+                    <li>জমি ক্রয়-বিক্রয় দলিল যাচাই</li>
+                    <li>দলিল রেজিস্ট্রেশন</li>
+                    <li>নামজারি ও মিউটেশন</li>
+                    <li>খতিয়ান ও পর্চা যাচাই</li>
+                    <li>সম্পত্তি বিরোধ নিষ্পত্তি</li>
+                    <li>দলিল প্রস্তুতকরণ</li>
+                </ul>
+                <button class="view-details-btn">বিস্তারিত দেখুন</button>
             </div>
         </div>
     </section>
 
     <!-- Case Types Section -->
-    <section id="cases" class="section bg-white">
-        <div class="container">
-            <h2 class="section-title">মামলার ধরন সমূহ</h2>
-            <p class="section-subtitle">বিভিন্ন ধরনের মামলার বিস্তারিত প্রক্রিয়া ও আইনি তথ্য জানুন</p>
-            
-            <div class="cases-grid">
-                <div class="case-card">
-                    <span class="case-badge">ফৌজদারি</span>
-                    <h4>হত্যা মামলা</h4>
-                    <p>দণ্ডবিধি ধারা ৩০২-৩০৪ এর অধীনে</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">ফৌজদারি</span>
-                    <h4>চুরি ও ডাকাতির মামলা</h4>
-                    <p>দণ্ডবিধি ধারা ৩৭৮-৩৮৯ এর অধীনে</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">ফৌজদারি</span>
-                    <h4>জালিয়াতি ও প্রতারণা</h4>
-                    <p>দণ্ডবিধি ধারা ৪১৫-৪২০ এর অধীনে</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">ফৌজদারি</span>
-                    <h4>মাদক মামলা</h4>
-                    <p>মাদকদ্রব্য নিয়ন্ত্রণ আইন ১৯৯০</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">ফৌজদারি</span>
-                    <h4>নারী ও শিশু নির্যাতন</h4>
-                    <p>নারী ও শিশু নির্যাতন দমন আইন ২০০০</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">সাংবিধানিক</span>
-                    <h4>রিট পিটিশন</h4>
-                    <p>মৌলিক অধিকার সংরক্ষণ</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">পারিবারিক</span>
-                    <h4>বিবাহবিচ্ছেদ</h4>
-                    <p>মুসলিম বিবাহবিচ্ছেদ আইন ১৯৩৯</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">দেওয়ানি</span>
-                    <h4>জমি ক্রয়-বিক্রয়</h4>
-                    <p>সম্পত্তি হস্তান্তর আইন ১৮৮২</p>
-                </div>
-                <div class="case-card">
-                    <span class="case-badge">শ্রম</span>
-                    <h4>অন্যায় বরখাস্ত</h4>
-                    <p>শ্রম আইন ২০০৬</p>
-                </div>
+    <section id="cases" class="case-types">
+        <h2 class="section-title">মামলার ধরন সমূহ</h2>
+        <p class="section-subtitle">বিভিন্ন ধরনের মামলার বিস্তারিত প্রক্রিয়া ও আইনি তথ্য জানুন</p>
+        
+        <div class="case-grid">
+            <div class="case-card">
+                <span class="case-type-badge">ফৌজদারি</span>
+                <h4>হত্যা মামলা</h4>
+                <p>দণ্ডবিধি ধারা ৩০২-৩০৪ এর অধীনে</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">ফৌজদারি</span>
+                <h4>চুরি ও ডাকাতির মামলা</h4>
+                <p>দণ্ডবিধি ধারা ৩৭৮-৩৮৯ এর অধীনে</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">ফৌজদারি</span>
+                <h4>জালিয়াতি ও প্রতারণা</h4>
+                <p>দণ্ডবিধি ধারা ৪১৫-৪২০ এর অধীনে</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">ফৌজদারি</span>
+                <h4>মাদক মামলা</h4>
+                <p>মাদকদ্রব্য নিয়ন্ত্রণ আইন ১৯৯০</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">ফৌজদারি</span>
+                <h4>নারী ও শিশু নির্যাতন</h4>
+                <p>নারী ও শিশু নির্যাতন দমন আইন ২০০০</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">সাংবিধানিক</span>
+                <h4>রিট পিটিশন</h4>
+                <p>মৌলিক অধিকার সংরক্ষণ</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">পারিবারিক</span>
+                <h4>বিবাহবিচ্ছেদ</h4>
+                <p>মুসলিম বিবাহবিচ্ছেদ আইন ১৯৩৯</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">দেওয়ানি</span>
+                <h4>জমি ক্রয়-বিক্রয়</h4>
+                <p>সম্পত্তি হস্তান্তর আইন ১৮৮২</p>
+            </div>
+            <div class="case-card">
+                <span class="case-type-badge">শ্রম</span>
+                <h4>অন্যায় বরখাস্ত</h4>
+                <p>শ্রম আইন ২০০৬</p>
             </div>
         </div>
     </section>
 
     <!-- Case Studies Section -->
-    <section id="case-studies" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">সফল মামলার কেস স্টাডি</h2>
-            <p class="section-subtitle">আমাদের বিজয়ী মামলাসমূহ</p>
-            
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <span class="case-badge">ফৌজদারি</span>
-                        <h3>খুনের মামলায় জামিন প্রাপ্তি</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <p><strong>মামলার ধরন:</strong> দণ্ডবিধি ৩০২ ধারা</p>
-                        <p><strong>কোর্ট:</strong> ঢাকা জজ কোর্ট</p>
-                        <p><strong>ফলাফল:</strong> ক্লায়েন্ট সফলভাবে জামিন লাভ করেন</p>
-                        <p class="case-description">একটি জটিল খুনের মামলায় আমাদের ক্লায়েন্ট অভিযুক্ত ছিলেন। শক্তিশালী আইনি যুক্তি এবং সাক্ষ্য-প্রমাণ উপস্থাপনের মাধ্যমে আমরা তার জন্য জামিন নিশ্চিত করতে সক্ষম হই।</p>
-                    </div>
+    <section id="case-studies" class="case-studies">
+        <h2 class="section-title">সফল মামলার কেস স্টাডি</h2>
+        <p class="section-subtitle">আমাদের বিজয়ী মামলাসমূহ</p>
+        
+        <div class="case-studies-grid">
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <span class="case-type-badge">ফৌজদারি</span>
+                    <h3>খুনের মামলায় জামিন প্রাপ্তি</h3>
                 </div>
-
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <span class="case-badge">দেওয়ানি</span>
-                        <h3>জমি দখল পুনরুদ্ধার</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <p><strong>মামলার ধরন:</strong> সম্পত্তি বিরোধ</p>
-                        <p><strong>কোর্ট:</strong> ঢাকা জেলা জজ কোর্ট</p>
-                        <p><strong>ফলাফল:</strong> ক্লায়েন্টের জমির দখল ফিরে পান</p>
-                        <p class="case-description">দীর্ঘদিন যাবত অবৈধ দখলে থাকা ৫ বিঘা জমির মালিকানা এবং দখল পুনরুদ্ধারে সফল হয়েছি। সঠিক দলিলপত্র এবং আইনি প্রক্রিয়া অনুসরণের মাধ্যমে এই বিজয় অর্জিত হয়।</p>
-                    </div>
+                <div class="case-study-body">
+                    <p><strong>মামলার ধরন:</strong> দণ্ডবিধি ৩০২ ধারা</p>
+                    <p><strong>কোর্ট:</strong> ঢাকা জজ কোর্ট</p>
+                    <p><strong>ফলাফল:</strong> ক্লায়েন্ট সফলভাবে জামিন লাভ করেন</p>
+                    <p class="case-description">একটি জটিল খুনের মামলায় আমাদের ক্লায়েন্ট অভিযুক্ত ছিলেন। শক্তিশালী আইনি যুক্তি এবং সাক্ষ্য-প্রমাণ উপস্থাপনের মাধ্যমে আমরা তার জন্য জামিন নিশ্চিত করতে সক্ষম হই।</p>
                 </div>
+            </div>
 
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <span class="case-badge">পারিবারিক</span>
-                        <h3>দেনমোহর আদায়ে সফলতা</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <p><strong>মামলার ধরন:</strong> দেনমোহর মামলা</p>
-                        <p><strong>কোর্ট:</strong> পারিবারিক আদালত, ঢাকা</p>
-                        <p><strong>ফলাফল:</strong> সম্পূর্ণ দেনমোহর আদায় সম্পন্ন</p>
-                        <p class="case-description">বিবাহবিচ্ছেদের পর দেনমোহর আদায়ে বাধাগ্রস্ত একজন মহিলার পক্ষে মামলা পরিচালনা করে সম্পূর্ণ দেনমোহর আদায় করতে সক্ষম হয়েছি।</p>
-                    </div>
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <span class="case-type-badge">দেওয়ানি</span>
+                    <h3>জমি দখল পুনরুদ্ধার</h3>
                 </div>
+                <div class="case-study-body">
+                    <p><strong>মামলার ধরন:</strong> সম্পত্তি বিরোধ</p>
+                    <p><strong>কোর্ট:</strong> ঢাকা জেলা জজ কোর্ট</p>
+                    <p><strong>ফলাফল:</strong> ক্লায়েন্টের জমির দখল ফিরে পান</p>
+                    <p class="case-description">দীর্ঘদিন যাবত অবৈধ দখলে থাকা ৫ বিঘা জমির মালিকানা এবং দখল পুনরুদ্ধারে সফল হয়েছি। সঠিক দলিলপত্র এবং আইনি প্রক্রিয়া অনুসরণের মাধ্যমে এই বিজয় অর্জিত হয়।</p>
+                </div>
+            </div>
 
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <span class="case-badge">সাংবিধানিক</span>
-                        <h3>রিট পিটিশনে বিজয়</h3>
-                    </div>
-                    <div class="case-study-body">
-                        <p><strong>মামলার ধরন:</strong> রিট পিটিশন</p>
-                        <p><strong>কোর্ট:</strong> বাংলাদেশ সুপ্রিম কোর্ট (হাইকোর্ট বিভাগ)</p>
-                        <p><strong>ফলাফল:</strong> রিট মঞ্জুর ও প্রশাসনিক আদেশ বাতিল</p>
-                        <p class="case-description">একটি অন্যায় প্রশাসনিক সিদ্ধান্তের বিরুদ্ধে হাইকোর্টে রিট পিটিশন দায়ের করে সফলভাবে সেই আদেশ বাতিল করা হয়েছে এবং ক্লায়েন্টের মৌলিক অধিকার রক্ষা করা হয়েছে।</p>
-                    </div>
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <span class="case-type-badge">পারিবারিক</span>
+                    <h3>দেনমোহর আদায়ে সফলতা</h3>
+                </div>
+                <div class="case-study-body">
+                    <p><strong>মামলার ধরন:</strong> দেনমোহর মামলা</p>
+                    <p><strong>কোর্ট:</strong> পারিবারিক আদালত, ঢাকা</p>
+                    <p><strong>ফলাফল:</strong> সম্পূর্ণ দেনমোহর আদায় সম্পন্ন</p>
+                    <p class="case-description">বিবাহবিচ্ছেদের পর দেনমোহর আদায়ে বাধাগ্রস্ত একজন মহিলার পক্ষে মামলা পরিচালনা করে সম্পূর্ণ দেনমোহর আদায় করতে সক্ষম হয়েছি।</p>
+                </div>
+            </div>
+
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <span class="case-type-badge">সাংবিধানিক</span>
+                    <h3>রিট পিটিশনে বিজয়</h3>
+                </div>
+                <div class="case-study-body">
+                    <p><strong>মামলার ধরন:</strong> রিট পিটিশন</p>
+                    <p><strong>কোর্ট:</strong> বাংলাদেশ সুপ্রিম কোর্ট (হাইকোর্ট বিভাগ)</p>
+                    <p><strong>ফলাফল:</strong> রিট মঞ্জুর ও প্রশাসনিক আদেশ বাতিল</p>
+                    <p class="case-description">একটি অন্যায় প্রশাসনিক সিদ্ধান্তের বিরুদ্ধে হাইকোর্টে রিট পিটিশন দায়ের করে সফলভাবে সেই আদেশ বাতিল করা হয়েছে এবং ক্লায়েন্টের মৌলিক অধিকার রক্ষা করা হয়েছে।</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section bg-white">
-        <div class="container">
-            <h2 class="section-title">ক্লায়েন্টদের মতামত</h2>
-            <p class="section-subtitle">আমাদের সেবা নিয়ে ক্লায়েন্টদের অভিজ্ঞতা</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"জিলানী সাহেব আমার জমির মামলায় অসাধারণ সেবা দিয়েছেন। তার পরামর্শ এবং কঠোর পরিশ্রমের ফলে আমি আমার সম্পত্তি ফিরে পেয়েছি। অত্যন্ত দক্ষ এবং বিশ্বস্ত আইনজীবী।"</p>
-                    <div class="testimonial-author">
-                        <h4>মোঃ রফিকুল ইসলাম</h4>
-                        <p>ব্যবসায়ী, ঢাকা</p>
-                    </div>
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">ক্লায়েন্টদের মতামত</h2>
+        <p class="section-subtitle">আমাদের সেবা নিয়ে ক্লায়েন্টদের অভিজ্ঞতা</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"জিলানী সাহেব আমার জমির মামলায় অসাধারণ সেবা দিয়েছেন। তার পরামর্শ এবং কঠোর পরিশ্রমের ফলে আমি আমার সম্পত্তি ফিরে পেয়েছি। অত্যন্ত দক্ষ এবং বিশ্বস্ত আইনজীবী।"</p>
+                <div class="testimonial-author">
+                    <h4>মোঃ রফিকুল ইসলাম</h4>
+                    <p>ব্যবসায়ী, ঢাকা</p>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"পারিবারিক সমস্যায় খুবই সংবেদনশীলভাবে আমার পাশে ছিলেন। দেনমোহর আদায়ে তার দক্ষতা ও আন্তরিকতা প্রশংসনীয়। সকল মহিলাদের জন্য সুপারিশ করছি।"</p>
-                    <div class="testimonial-author">
-                        <h4>ফারহানা আক্তার</h4>
-                        <p>গৃহিণী, ঢাকা</p>
-                    </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"পারিবারিক সমস্যায় খুবই সংবেদনশীলভাবে আমার পাশে ছিলেন। দেনমোহর আদায়ে তার দক্ষতা ও আন্তরিকতা প্রশংসনীয়। সকল মহিলাদের জন্য সুপারিশ করছি।"</p>
+                <div class="testimonial-author">
+                    <h4>ফারহানা আক্তার</h4>
+                    <p>গৃহিণী, ঢাকা</p>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"ফৌজদারি মামলায় জামিন পেতে তার যুক্তি এবং উপস্থাপনা ছিল দুর্দান্ত। খুবই পেশাদার এবং আইন সম্পর্কে গভীর জ্ঞানসম্পন্ন। ধন্যবাদ জিলানী সাহেব।"</p>
-                    <div class="testimonial-author">
-                        <h4>কামরুল হাসান</h4>
-                        <p>চাকরিজীবী, নারায়ণগঞ্জ</p>
-                    </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"ফৌজদারি মামলায় জামিন পেতে তার যুক্তি এবং উপস্থাপনা ছিল দুর্দান্ত। খুবই পেশাদার এবং আইন সম্পর্কে গভীর জ্ঞানসম্পন্ন। ধন্যবাদ জিলানী সাহেব।"</p>
+                <div class="testimonial-author">
+                    <h4>কামরুল হাসান</h4>
+                    <p>চাকরিজীবী, নারায়ণগঞ্জ</p>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"শ্রম আইনে আমার অধিকার রক্ষায় অসাধারণ কাজ করেছেন। অন্যায় বরখাস্তের বিরুদ্ধে লড়াই করে আমার চাকরি ফিরিয়ে দিয়েছেন। সত্যিই কৃতজ্ঞ।"</p>
-                    <div class="testimonial-author">
-                        <h4>আব্দুল করিম</h4>
-                        <p>কারখানা শ্রমিক, গাজীপুর</p>
-                    </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"শ্রম আইনে আমার অধিকার রক্ষায় অসাধারণ কাজ করেছেন। অন্যায় বরখাস্তের বিরুদ্ধে লড়াই করে আমার চাকরি ফিরিয়ে দিয়েছেন। সত্যিই কৃতজ্ঞ।"</p>
+                <div class="testimonial-author">
+                    <h4>আব্দুল করিম</h4>
+                    <p>কারখানা শ্রমিক, গাজীপুর</p>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"সম্পত্তি বিরোধে তার পরামর্শ অমূল্য ছিল। খুব ধৈর্য সহকারে সব কিছু বুঝিয়ে দিয়েছেন এবং মামলা জিতিয়ে দিয়েছেন। অত্যন্ত দায়িত্বশীল আইনজীবী।"</p>
-                    <div class="testimonial-author">
-                        <h4>সালমা বেগম</h4>
-                        <p>ব্যবসায়ী, ঢাকা</p>
-                    </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"সম্পত্তি বিরোধে তার পরামর্শ অমূল্য ছিল। খুব ধৈর্য সহকারে সব কিছু বুঝিয়ে দিয়েছেন এবং মামলা জিতিয়ে দিয়েছেন। অত্যন্ত দায়িত্বশীল আইনজীবী।"</p>
+                <div class="testimonial-author">
+                    <h4>সালমা বেগম</h4>
+                    <p>ব্যবসায়ী, ঢাকা</p>
                 </div>
+            </div>
 
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p class="testimonial-text">"হাইকোর্টে রিট পিটিশন দায়ের করে আমার সমস্যার সমাধান করে দিয়েছেন। তার আইনি জ্ঞান এবং পেশাদারিত্ব প্রশংসার দাবিদার। সবাইকে সুপারিশ করছি।"</p>
-                    <div class="testimonial-author">
-                        <h4>তানভীর আহমেদ</h4>
-                        <p>সরকারি কর্মচারী, ঢাকা</p>
-                    </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"হাইকোর্টে রিট পিটিশন দায়ের করে আমার সমস্যার সমাধান করে দিয়েছেন। তার আইনি জ্ঞান এবং পেশাদারিত্ব প্রশংসার দাবিদার। সবাইকে সুপারিশ করছি।"</p>
+                <div class="testimonial-author">
+                    <h4>তানভীর আহমেদ</h4>
+                    <p>সরকারি কর্মচারী, ঢাকা</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">আইনি পরামর্শ ব্লগ</h2>
-            <p class="section-subtitle">গুরুত্বপূর্ণ আইনি বিষয়ে জানুন</p>
-            
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        📄
-                        <span class="blog-category">সম্পত্তি আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>জমি কেনার আগে যে বিষয়গুলো অবশ্যই যাচাই করবেন</h3>
-                        <p class="blog-meta">📅 ১৫ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৫ মিনিট পড়া</p>
-                        <p>জমি ক্রয়ের পূর্বে দলিল যাচাই, খতিয়ান পরীক্ষা, এবং পর্চা দেখা অত্যন্ত জরুরি। এই নিবন্ধে আমরা বিস্তারিত আলোচনা করব কিভাবে নিরাপদে জমি কিনবেন...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
+    <section id="blog" class="blog">
+        <h2 class="section-title">আইনি পরামর্শ ব্লগ</h2>
+        <p class="section-subtitle">গুরুত্বপূর্ণ আইনি বিষয়ে জানুন</p>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">
+                    📄
+                    <span class="blog-category">সম্পত্তি আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>জমি কেনার আগে যে বিষয়গুলো অবশ্যই যাচাই করবেন</h3>
+                    <p class="blog-meta">📅 ১৫ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৫ মিনিট পড়া</p>
+                    <p>জমি ক্রয়ের পূর্বে দলিল যাচাই, খতিয়ান পরীক্ষা, এবং পর্চা দেখা অত্যন্ত জরুরি।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        👨‍👩‍👧
-                        <span class="blog-category">পারিবারিক আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>বিবাহবিচ্ছেদ মামলা: প্রক্রিয়া এবং অধিকার</h3>
-                        <p class="blog-meta">📅 ১০ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৭ মিনিট পড়া</p>
-                        <p>বিবাহবিচ্ছেদ একটি সংবেদনশীল বিষয়। এই প্রক্রিয়ায় দেনমোহর, ভরণপোষণ, এবং সন্তানের হেফাজত সংক্রান্ত গুরুত্বপূর্ণ বিষয়গুলো জানা প্রয়োজন...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    👨‍👩‍👧
+                    <span class="blog-category">পারিবারিক আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>বিবাহবিচ্ছেদ মামলা: প্রক্রিয়া এবং অধিকার</h3>
+                    <p class="blog-meta">📅 ১০ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৭ মিনিট পড়া</p>
+                    <p>বিবাহবিচ্ছেদ একটি সংবেদনশীল বিষয়। দেনমোহর, ভরণপোষণ সংক্রান্ত বিষয়গুলো জানা প্রয়োজন।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        ⚖️
-                        <span class="blog-category">ফৌজদারি আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>ফৌজদারি মামলায় জামিন: কখন এবং কিভাবে পাবেন?</h3>
-                        <p class="blog-meta">📅 ০৫ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৬ মিনিট পড়া</p>
-                        <p>ফৌজদারি মামলায় জামিন পাওয়া একটি গুরুত্বপূর্ণ অধিকার। কোন কোন ক্ষেত্রে জামিন পাওয়া যায়, জামিনের আবেদন কিভাবে করতে হয় এবং প্রয়োজনীয় কাগজপত্র...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    ⚖️
+                    <span class="blog-category">ফৌজদারি আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>ফৌজদারি মামলায় জামিন: কখন এবং কিভাবে পাবেন?</h3>
+                    <p class="blog-meta">📅 ০৫ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৬ মিনিট পড়া</p>
+                    <p>ফৌজদারি মামলায় জামিন পাওয়া একটি গুরুত্বপূর্ণ অধিকার। জামিনের আবেদন প্রক্রিয়া জানুন।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        👷
-                        <span class="blog-category">শ্রম আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>শ্রমিকদের মৌলিক অধিকার এবং ক্ষতিপূরণ</h3>
-                        <p class="blog-meta">📅 ০১ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৮ মিনিট পড়া</p>
-                        <p>বাংলাদেশ শ্রম আইন ২০০৬ অনুযায়ী শ্রমিকদের বিভিন্ন অধিকার এবং সুবিধা রয়েছে। চাকরি থেকে অন্যায় বরখাস্ত, বকেয়া বেতন, ক্ষতিপূরণ সংক্রান্ত...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    👷
+                    <span class="blog-category">শ্রম আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>শ্রমিকদের মৌলিক অধিকার এবং ক্ষতিপূরণ</h3>
+                    <p class="blog-meta">📅 ০১ ফেব্রুয়ারি, ২০২৬ | ⏱️ ৮ মিনিট পড়া</p>
+                    <p>বাংলাদেশ শ্রম আইন ২০০৬ অনুযায়ী শ্রমিকদের অধিকার এবং সুবিধা সম্পর্কে জানুন।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        📜
-                        <span class="blog-category">সাংবিধানিক আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>রিট পিটিশন: মৌলিক অধিকার রক্ষার হাতিয়ার</h3>
-                        <p class="blog-meta">📅 ২৮ জানুয়ারি, ২০২৬ | ⏱️ ১০ মিনিট পড়া</p>
-                        <p>রিট পিটিশন হলো হাইকোর্টে মৌলিক অধিকার রক্ষার জন্য একটি বিশেষ আবেদন। কখন এবং কিভাবে রিট দায়ের করতে হয়, রিটের ধরন, এবং এর মাধ্যমে...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    📜
+                    <span class="blog-category">সাংবিধানিক আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>রিট পিটিশন: মৌলিক অধিকার রক্ষার হাতিয়ার</h3>
+                    <p class="blog-meta">📅 ২৮ জানুয়ারি, ২০২৬ | ⏱️ ১০ মিনিট পড়া</p>
+                    <p>রিট পিটিশন হলো হাইকোর্টে মৌলিক অধিকার রক্ষার জন্য একটি বিশেষ আবেদন।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        🏠
-                        <span class="blog-category">উত্তরাধিকার আইন</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>মুসলিম উত্তরাধিকার আইন: কে কতটুকু পাবেন?</h3>
-                        <p class="blog-meta">📅 ২০ জানুয়ারি, ২০২৬ | ⏱️ ৯ মিনিট পড়া</p>
-                        <p>মুসলিম উত্তরাধিকার আইন অনুযায়ী সম্পত্তি বণ্টনের নিয়ম, পুত্র-কন্যার অংশ, স্ত্রী-স্বামীর অংশ, এবং অন্যান্য উত্তরাধিকারীদের অধিকার সম্পর্কে...</p>
-                        <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
-                    </div>
-                </article>
-            </div>
+            <article class="blog-card">
+                <div class="blog-image">
+                    🏠
+                    <span class="blog-category">উত্তরাধিকার আইন</span>
+                </div>
+                <div class="blog-content">
+                    <h3>মুসলিম উত্তরাধিকার আইন: কে কতটুকু পাবেন?</h3>
+                    <p class="blog-meta">📅 ২০ জানুয়ারি, ২০২৬ | ⏱️ ৯ মিনিট পড়া</p>
+                    <p>মুসলিম উত্তরাধিকার আইন অনুযায়ী সম্পত্তি বণ্টনের নিয়ম এবং বিস্তারিত জানুন।</p>
+                    <a href="#" class="blog-link">বিস্তারিত পড়ুন →</a>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section bg-white">
-        <div class="container">
-            <h2 class="section-title">ফটো গ্যালারি</h2>
-            <p class="section-subtitle">আমাদের অফিস এবং কোর্ট কার্যক্রম</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    🏛️
-                    <div class="gallery-overlay">
-                        <h4>বাংলাদেশ সুপ্রিম কোর্ট</h4>
-                    </div>
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">ফটো গ্যালারি</h2>
+        <p class="section-subtitle">আমাদের অফিস এবং কোর্ট কার্যক্রম</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                🏛️
+                <div class="gallery-overlay">
+                    <h4>বাংলাদেশ সুপ্রিম কোর্ট</h4>
                 </div>
-                <div class="gallery-item">
-                    ⚖️
-                    <div class="gallery-overlay">
-                        <h4>ঢাকা জজ কোর্ট</h4>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                ⚖️
+                <div class="gallery-overlay">
+                    <h4>ঢাকা জজ কোর্ট</h4>
                 </div>
-                <div class="gallery-item">
-                    🏢
-                    <div class="gallery-overlay">
-                        <h4>আমাদের অফিস</h4>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                🏢
+                <div class="gallery-overlay">
+                    <h4>আমাদের অফিস</h4>
                 </div>
-                <div class="gallery-item">
-                    👨‍⚖️
-                    <div class="gallery-overlay">
-                        <h4>কোর্ট রুম</h4>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                👨‍⚖️
+                <div class="gallery-overlay">
+                    <h4>কোর্ট রুম</h4>
                 </div>
-                <div class="gallery-item">
-                    📚
-                    <div class="gallery-overlay">
-                        <h4>আইন লাইব্রেরি</h4>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                📚
+                <div class="gallery-overlay">
+                    <h4>আইন লাইব্রেরি</h4>
                 </div>
-                <div class="gallery-item">
-                    🤝
-                    <div class="gallery-overlay">
-                        <h4>ক্লায়েন্ট মিটিং</h4>
-                    </div>
+            </div>
+            <div class="gallery-item">
+                🤝
+                <div class="gallery-overlay">
+                    <h4>ক্লায়েন্ট মিটিং</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
-            <p class="section-subtitle">আইনি সেবা সংক্রান্ত সাধারণ প্রশ্নাবলী</p>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>আপনার ফি কত এবং কিভাবে পেমেন্ট করতে হয়?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>আমাদের ফি মামলার ধরন এবং জটিলতার উপর নির্ভর করে। প্রথম পরামর্শ সাধারণত বিনামূল্যে। মামলা গ্রহণের পূর্বে আমরা স্পষ্টভাবে ফি নির্ধারণ করি এবং একটি লিখিত চুক্তি সম্পাদন করি। পেমেন্ট নগদ, ব্যাংক ট্রান্সফার বা মোবাইল ব্যাংকিং এর মাধ্যমে করা যায়।</p>
-                    </div>
+    <section id="faq" class="faq">
+        <h2 class="section-title">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+        <p class="section-subtitle">আইনি সেবা সংক্রান্ত সাধারণ প্রশ্নাবলী</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>আপনার ফি কত এবং কিভাবে পেমেন্ট করতে হয়?</h3>
+                    <span class="faq-arrow">▼</span>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>মামলা জেতার সম্ভাবনা কত?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>প্রতিটি মামলা আলাদা এবং এর সফলতা নির্ভর করে সাক্ষ্য-প্রমাণ, আইনি যুক্তি, এবং মামলার বিস্তারিত পরিস্থিতির উপর। আমরা প্রথম পরামর্শে আপনার মামলা বিশ্লেষণ করে বাস্তবসম্মত মূল্যায়ন প্রদান করব।</p>
-                    </div>
+                <div class="faq-answer">
+                    <p>আমাদের ফি মামলার ধরন এবং জটিলতার উপর নির্ভর করে। প্রথম পরামর্শ সাধারণত বিনামূল্যে। মামলা গ্রহণের পূর্বে আমরা স্পষ্টভাবে ফি নির্ধারণ করি এবং একটি লিখিত চুক্তি সম্পাদন করি। পেমেন্ট নগদ, ব্যাংক ট্রান্সফার বা মোবাইল ব্যাংকিং এর মাধ্যমে করা যায়।</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>একটি মামলা শেষ হতে কতদিন লাগে?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>মামলার সময়কাল নির্ভর করে মামলার ধরন, কোর্টের চাপ, এবং মামলার জটিলতার উপর। সাধারণত দেওয়ানি মামলা ১-৩ বছর, ফৌজদারি মামলা ৬ মাস থেকে ২ বছর এবং পারিবারিক মামলা ৬ মাস থেকে ১ বছর সময় নিতে পারে।</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>মামলা জেতার সম্ভাবনা কত?</h3>
+                    <span class="faq-arrow">▼</span>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>আমার কি সব সময় কোর্টে উপস্থিত থাকতে হবে?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>না, বেশিরভাগ ক্ষেত্রে আপনার আইনজীবী আপনার প্রতিনিধিত্ব করবেন। তবে কিছু গুরুত্বপূর্ণ শুনানি যেমন সাক্ষ্য দেওয়া বা চূড়ান্ত শুনানিতে আপনার উপস্থিতি প্রয়োজন হতে পারে।</p>
-                    </div>
+                <div class="faq-answer">
+                    <p>প্রতিটি মামলা আলাদা এবং এর সফলতা নির্ভর করে সাক্ষ্য-প্রমাণ, আইনি যুক্তি, এবং মামলার বিস্তারিত পরিস্থিতির উপর। আমরা প্রথম পরামর্শে আপনার মামলা বিশ্লেষণ করে বাস্তবসম্মত মূল্যায়ন প্রদান করব।</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>জরুরী পরিস্থিতিতে কিভাবে যোগাযোগ করব?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>জরুরী পরিস্থিতিতে আপনি আমাদের মোবাইল নম্বর ০১৬০৩২৩৯৭৩৫ এ যে কোনো সময় কল বা হোয়াটসঅ্যাপ করতে পারেন। আমরা ২৪/৭ জরুরী আইনি সহায়তা প্রদান করি।</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>একটি মামলা শেষ হতে কতদিন লাগে?</h3>
+                    <span class="faq-arrow">▼</span>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>কোন ধরনের ডকুমেন্ট নিয়ে আসতে হবে প্রথম পরামর্শে?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>আপনার মামলা সংক্রান্ত সকল কাগজপত্র যেমন নোটিশ, সমন, দলিল, চুক্তিপত্র, ছবি, এবং অন্যান্য প্রাসঙ্গিক ডকুমেন্ট নিয়ে আসুন। এছাড়াও আপনার জাতীয় পরিচয়পত্র সাথে রাখুন।</p>
-                    </div>
+                <div class="faq-answer">
+                    <p>মামলার সময়কাল নির্ভর করে মামলার ধরন, কোর্টের চাপ, এবং মামলার জটিলতার উপর। সাধারণত দেওয়ানি মামলা ১-৩ বছর, ফৌজদারি মামলা ৬ মাস থেকে ২ বছর এবং পারিবারিক মামলা ৬ মাস থেকে ১ বছর সময় নিতে পারে।</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>আমার তথ্য কি গোপনীয় থাকবে?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>হ্যাঁ, সম্পূর্ণভাবে। আইনজীবী-ক্লায়েন্ট গোপনীয়তা আমাদের পেশাগত নৈতিকতার মূল ভিত্তি। আপনার সকল তথ্য এবং আলোচনা সম্পূর্ণ গোপনীয় রাখা হবে।</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>আমার কি সব সময় কোর্টে উপস্থিত থাকতে হবে?</h3>
+                    <span class="faq-arrow">▼</span>
                 </div>
+                <div class="faq-answer">
+                    <p>না, বেশিরভাগ ক্ষেত্রে আপনার আইনজীবী আপনার প্রতিনিধিত্ব করবেন। তবে কিছু গুরুত্বপূর্ণ শুনানি যেমন সাক্ষ্য দেওয়া বা চূড়ান্ত শুনানিতে আপনার উপস্থিতি প্রয়োজন হতে পারে।</p>
+                </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>অনলাইনে পরামর্শ নেওয়া সম্ভব?</h3>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>হ্যাঁ, আমরা ফোন, ভিডিও কল, এবং হোয়াটসঅ্যাপের মাধ্যমে অনলাইন পরামর্শ সেবা প্রদান করি। তবে, প্রথম পরামর্শ সরাসরি নেওয়া উত্তম।</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>জরুরী পরিস্থিতিতে কিভাবে যোগাযোগ করব?</h3>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>জরুরী পরিস্থিতিতে আপনি আমাদের মোবাইল নম্বর ০১৬০৩২৩৯৭৩৫ এ যে কোনো সময় কল বা হোয়াটসঅ্যাপ করতে পারেন। আমরা ২৪/৭ জরুরী আইনি সহায়তা প্রদান করি।</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>কোন ধরনের ডকুমেন্ট নিয়ে আসতে হবে প্রথম পরামর্শে?</h3>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>আপনার মামলা সংক্রান্ত সকল কাগজপত্র যেমন নোটিশ, সমন, দলিল, চুক্তিপত্র, ছবি, এবং অন্যান্য প্রাসঙ্গিক ডকুমেন্ট নিয়ে আসুন। এছাড়াও আপনার জাতীয় পরিচয়পত্র সাথে রাখুন।</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>আমার তথ্য কি গোপনীয় থাকবে?</h3>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>হ্যাঁ, সম্পূর্ণভাবে। আইনজীবী-ক্লায়েন্ট গোপনীয়তা আমাদের পেশাগত নৈতিকতার মূল ভিত্তি। আপনার সকল তথ্য এবং আলোচনা সম্পূর্ণ গোপনীয় রাখা হবে।</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>অনলাইনে পরামর্শ নেওয়া সম্ভব?</h3>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>হ্যাঁ, আমরা ফোন, ভিডিও কল, এবং হোয়াটসঅ্যাপের মাধ্যমে অনলাইন পরামর্শ সেবা প্রদান করি। তবে, প্রথম পরামর্শ সরাসরি নেওয়া উত্তম।</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Appointment Section -->
-    <section id="appointment" class="section bg-white">
-        <div class="container">
-            <h2 class="section-title">অনলাইন অ্যাপয়েন্টমেন্ট বুকিং</h2>
-            <p class="section-subtitle">আইনি পরামর্শের জন্য এখনই অ্যাপয়েন্টমেন্ট নিন</p>
-            
-            <div class="appointment-container">
-                <form id="appointmentForm" class="appointment-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">পূর্ণ নাম *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">মোবাইল নম্বর *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">ইমেইল</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="caseType">মামলার ধরন *</label>
-                            <select id="caseType" name="caseType" required>
-                                <option value="">নির্বাচন করুন</option>
-                                <option value="criminal">ফৌজদারি মামলা</option>
-                                <option value="civil">দেওয়ানি মামলা</option>
-                                <option value="family">পারিবারিক আইন</option>
-                                <option value="constitutional">সাংবিধানিক আইন</option>
-                                <option value="labor">শ্রম আইন</option>
-                                <option value="property">ভূমি ও সম্পত্তি</option>
-                                <option value="other">অন্যান্য</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date">পছন্দের তারিখ *</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time">পছন্দের সময় *</label>
-                            <select id="time" name="time" required>
-                                <option value="">নির্বাচন করুন</option>
-                                <option value="09:00">সকাল ৯:০০</option>
-                                <option value="10:00">সকাল ১০:০০</option>
-                                <option value="11:00">সকাল ১১:০০</option>
-                                <option value="12:00">দুপুর ১২:০০</option>
-                                <option value="14:00">দুপুর ২:০০</option>
-                                <option value="15:00">বিকাল ৩:০০</option>
-                                <option value="16:00">বিকাল ৪:০০</option>
-                                <option value="17:00">বিকাল ৫:০০</option>
-                            </select>
-                        </div>
-                    </div>
-
+    <section id="appointment" class="appointment">
+        <h2 class="section-title">অনলাইন অ্যাপয়েন্টমেন্ট বুকিং</h2>
+        <p class="section-subtitle">আইনি পরামর্শের জন্য এখনই অ্যাপয়েন্টমেন্ট নিন</p>
+        
+        <div class="appointment-container">
+            <form id="appointmentForm" class="appointment-form">
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="message">সমস্যার সংক্ষিপ্ত বিবরণ *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="name">পূর্ণ নাম *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-
                     <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            আমি নিশ্চিত করছি যে প্রদত্ত সকল তথ্য সঠিক এবং আমি গোপনীয়তা নীতিতে সম্মত।
-                        </label>
+                        <label for="phone">মোবাইল নম্বর *</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
+                </div>
 
-                    <button type="submit" class="btn-submit">অ্যাপয়েন্টমেন্ট জমা দিন</button>
-                </form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">ইমেইল</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="caseType">মামলার ধরন *</label>
+                        <select id="caseType" name="caseType" required>
+                            <option value="">নির্বাচন করুন</option>
+                            <option value="criminal">ফৌজদারি মামলা</option>
+                            <option value="civil">দেওয়ানি মামলা</option>
+                            <option value="family">পারিবারিক আইন</option>
+                            <option value="constitutional">সাংবিধানিক আইন</option>
+                            <option value="labor">শ্রম আইন</option>
+                            <option value="property">ভূমি ও সম্পত্তি</option>
+                            <option value="other">অন্যান্য</option>
+                        </select>
+                    </div>
+                </div>
 
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-card-icon">🕐</div>
-                        <h3>অফিস সময়</h3>
-                        <p>শনিবার - বৃহস্পতিবার<br>সকাল ৯:০০ - সন্ধ্যা ৬:০০</p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">পছন্দের তারিখ *</label>
+                        <input type="date" id="date" name="date" required>
                     </div>
-                    <div class="info-card">
-                        <div class="info-card-icon">📞</div>
-                        <h3>জরুরী যোগাযোগ</h3>
-                        <p>০১৬০৩২৩৯৭৩৫<br>২৪/৭ উপলব্ধ</p>
+                    <div class="form-group">
+                        <label for="time">পছন্দের সময় *</label>
+                        <select id="time" name="time" required>
+                            <option value="">নির্বাচন করুন</option>
+                            <option value="09:00">সকাল ৯:০০</option>
+                            <option value="10:00">সকাল ১০:০০</option>
+                            <option value="11:00">সকাল ১১:০০</option>
+                            <option value="12:00">দুপুর ১২:০০</option>
+                            <option value="14:00">দুপুর ২:০০</option>
+                            <option value="15:00">বিকাল ৩:০০</option>
+                            <option value="16:00">বিকাল ৪:০০</option>
+                            <option value="17:00">বিকাল ৫:০০</option>
+                        </select>
                     </div>
-                    <div class="info-card">
-                        <div class="info-card-icon">📍</div>
-                        <h3>অফিস অবস্থান</h3>
-                        <p>কোনাপাড়া, যাত্রাবাড়ি<br>ঢাকা, বাংলাদেশ</p>
-                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">সমস্যার সংক্ষিপ্ত বিবরণ *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        আমি নিশ্চিত করছি যে প্রদত্ত সকল তথ্য সঠিক এবং আমি গোপনীয়তা নীতিতে সম্মত।
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">অ্যাপয়েন্টমেন্ট জমা দিন</button>
+            </form>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">🕐</div>
+                    <h3>অফিস সময়</h3>
+                    <p>শনিবার - বৃহস্পতিবার<br>সকাল ৯:০০ - সন্ধ্যা ৬:০০</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">📞</div>
+                    <h3>জরুরী যোগাযোগ</h3>
+                    <p>০১৬০৩২৩৯৭৩৫<br>২৪/৭ উপলব্ধ</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">📍</div>
+                    <h3>অফিস অবস্থান</h3>
+                    <p>কোনাপাড়া, যাত্রাবাড়ি<br>ঢাকা, বাংলাদেশ</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">যোগাযোগ করুন</h2>
-            <p class="section-subtitle">আপনার আইনি সমস্যার সমাধানে আমরা সর্বদা প্রস্তুত</p>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📞</div>
-                    <h3>ফোনে যোগাযোগ</h3>
-                    <a href="tel:01603239735">01603239735</a>
-                    <p>সকাল ৯টা - সন্ধ্যা ৬টা</p>
-                </div>
+    <section id="contact" class="contact">
+        <h2 class="section-title">যোগাযোগ করুন</h2>
+        <p class="section-subtitle">আপনার আইনি সমস্যার সমাধানে আমরা সর্বদা প্রস্তুত</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>ফোনে যোগাযোগ</h3>
+                <a href="tel:01603239735">০১৬০৩২৩৯৭৩৫</a>
+                <p>সকাল ৯টা - সন্ধ্যা ৬টা</p>
+            </div>
 
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>ইমেইল</h3>
-                    <a href="mailto:mdjilanesarkar@gmail.com">mdjilanesarkar@gmail.com</a>
-                    <p>২৪ ঘণ্টার মধ্যে উত্তর পাবেন</p>
-                </div>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>ইমেইল</h3>
+                <a href="mailto:mdjilanesarkar@gmail.com">mdjilanesarkar@gmail.com</a>
+                <p>২৪ ঘণ্টার মধ্যে উত্তর পাবেন</p>
+            </div>
 
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3>অফিস ঠিকানা</h3>
-                    <p>বাংলাদেশ সুপ্রিম কোর্ট এবং ঢাকা জজ কোর্ট</p>
-                    <p>কোনাপাড়া, যাত্রাবাড়ি, বাংলাদেশ</p>
-                </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>অফিস ঠিকানা</h3>
+                <p>বাংলাদেশ সুপ্রিম কোর্ট এবং ঢাকা জজ কোর্ট</p>
+                <p>কোনাপাড়া, যাত্রাবাড়ি, বাংলাদেশ</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <div class="footer">
-        <p>© ২০২৬ Muntazir Law House | মোঃ জিলানী সরকার - শিক্ষানবিশ আইনজীবী। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>© ২০২৬ Muntazir LawLab | মোঃ জিলানী সরকার - শিক্ষানবিশ আইনজীবী। সর্বস্বত্ব সংরক্ষিত।</p>
         <p>বাংলাদেশ সুপ্রিম কোর্ট ও ঢাকা জজ কোর্ট</p>
     </div>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/8801603239735" class="whatsapp-float" target="_blank" title="হোয়াটসঅ্যাপে যোগাযোগ করুন">
-        💬
-    </a>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/8801603239735" class="floating-btn whatsapp-btn" target="_blank" title="হোয়াটসঅ্যাপে যোগাযোগ করুন">
+            💬
+        </a>
+        <a href="https://www.facebook.com/share/1MjxJvYHBc/" class="floating-btn facebook-btn" target="_blank" title="ফেসবুকে যোগাযোগ করুন">
+            📘
+        </a>
+    </div>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="উপরে যান">
